@@ -1473,6 +1473,7 @@ def install_activate(home_dir, bin_dir, prompt=None):
         files['activate.csh'] = ACTIVATE_CSH
 
     files['activate_this.py'] = ACTIVATE_THIS
+    files['replace_ps1.py'] = REPLACE_PS1
 
     install_files(home_dir, bin_dir, prompt, files)
 
@@ -1974,20 +1975,21 @@ AVijEPwfucjncQ==
 
 ##file activate.sh
 ACTIVATE_SH = convert("""
-eJytVd9v2kAMfs9fYQLq2m4MscdNVKMqEkgtVIQxbeuUHolpTgsXdHehpT/+9/mSEBJS2MOaB0ji
-z77P9menDpOAK5jzEGERKw0zhFihD/dcB2CrKJYewoyLFvM0XzGNNpzOZbSAGVPBqVWHdRSDx4SI
-NMhYANfgc4meDteW5ePGC45P4MkCumKhUENzDsu1H3lw1vJx1RJxGMKns6O2lWDqINGgotAHFCsu
-I7FAoWHFJGezEFWGqsEvaD5C42naHb93X+A3+elYCgVaxgh8DmQAys9HL2SS0mIaWBgm7mTN/O3G
-kzu6vHCng/HkW/fSve5O+hTOpnhfQAcoEry5jKVjNypoO0fgwzKSOgHm79KUK06Jfc7/RebHpD8a
-9kdXvT2UcnuFWG6p0stNB0mWUUQ1q3uiGRVEMfXHR03dTuQATPjwqIIPcB9wL4CArRAY/ZHJixYL
-Y9YBtcAoLQtFevOoI9QaHcEdMSAB0d08kuZhyUiSmav6CPCdVBnFOjNrLu6yMCWgKRA0TInBC5i4
-QwX3JG/mm581GKnSsSSxJTFHf9MAKr8w5T/vOv1mUurn5/zlT6fvTntjZzAaNl9rQ5JkU5KIc0GX
-inagwU57T2eddqWlTrvaS6d9sImZeUMkhWysveF0m37NcGub9Dpgi0j4qGiOzATjDr06OBjOYQOo
-7RBoGtNm9Denv1i0LVI7lxJDXLHSSBeWRflsyyqw7diuW3h0XdvK6lBMyaoMG1UyHdTsoYBuue75
-YOgOu1c91/2cwYpznPPeDoQpGL2xSm09NKp7BsvQ2hnT3aMs07lUnskpxewvBk73/LLnXo9HV9eT
-ijB3hWBO2ygoiWg/bKuZxqCCQq0DD3vkWIVvI2KosIw+vqW1gIItEG5KJb+xb09g65ktwYKgTc51
-uGJ/EFQs0ayEWLCQM5V9N4g+1+8UbXOJzF8bqhKtIqIwicWvzNFROZJlpfD8A7Vc044R0FxkcezG
-VzsV75usvTdYef+57v5n1b225qhXfwEmxHEs
+eJytVV1P2zAUfc+vuKQVA7aCusdNRSuiUpGgRaTrtE2TMcktsZY6ke0Uysd/33WapEkD3QPkoY1z
+j6/vxznXLZiEQsNMRAjzVBu4QUg1BnAnTAiujlPlI9wIecR9IxbcoAsHMxXP4Ybr8MBpwTJOwedS
+xgZUKkEYCIRC30RLxwmw2AV7+/DoAD2p1GigM4NkGcQ+HB8FuDiSaRTB5+PdrpNhWqDQouIoAJQL
+oWI5R2lgwZXgNxHqHLUDv6HzAO3Haf/qI3uGP7TPpEpqMCpFEDMgA1B+AfoRV5QWN8CjKNtO1ny/
+235k4/NTNj27mnzvn7PL/mRI7lzy9xVMiDLD28daem67gXZLBN4nsTIZsPy2SrmxKbPPxP+C+TkZ
+jkfD8cXglZBKeyOw0tIMrzRtDbKOolDzumec0WGcUn8CNNTtjA7AZQAPOvwEd6HwQwj5AoHTH5n8
+eD63ZhNSCyzTclfEN586Qq0xMdxSBEQgepvFyi4STpTMt+pDgB/Eyjg1udkIeZu7qQFtgaBtSwx+
+yOUtargjevPA/izBUpWOJYolFDkGRQOo/NKW/6TvDTtZqZ+eyo+/vCGbDq68s/Go81IbsiQ7ikhc
+ErpWtC0N9rqvdNbrNlrqdZu99Lpbm5ibi0BWkMI6GE3X6e/Y2Lo2vR64MpYBatKRVTBuhNcCD6MZ
+FICdjQA61lRIvzj92aFpsbILpTDCBa9JujIs6mc7TiXanstYZcmY6+R1qKbkNMRGlVwJNV9U0EeM
+nZyN2Kh/MWDsSw6r6riMey0IWzD64tTauk2qrwjLhrUh082jHNu5FT2zU6rZn555/ZPzAbu8Gl9c
+ThrE3CSCPa1gUObRvV9Xc+WDCgo7Pbh/hY5N+NojRhpLtMIk4j4y7SuRmF6t3vY6KeyJ7h4myzWn
+5YLRKEHJ59i7Lt6g1i/3ekMie8mSxoKVaf1Ul75UHdq1jXbfrY7eioxspVtwwf8i6FShHUSp5JHg
+Or+tqGjCfNB0hyjkwdIWSKFTRVT0X73bdnfrnhxnBS+vxTyFzjz347a/uSvJvMuwfYdB+8Yh+5YB
++9JwpV79AxZ5lxQ=
 """)
 
 ##file activate.fish
@@ -2197,6 +2199,13 @@ g6Hgf7WBt6lzMeiyyWVn3P1WVbwaczHmTzE9A5SyItTVgFYyvs/L/fXlaNgbw8v3azT+0eikVlWD
 /vBHbzQumP23uBCjsYdrL9OWARwxs/nuLOzeXbPJTa/Xv6sUmQir5pC1YRLz3eA+CD8Z0XpcW8v9
 MZWF36ryyXXf3yBIz6nzqz8Muyz0m5Qj7OexfYo/Ph3LqvkHUg7AuA==
 """)
+
+##file replace_ps1.py
+REPLACE_PS1 = convert("""
+eJxtjs0KwjAQhO/7FEshNNEQaI+CB8FjwYu3WkuxUQP9I5u2+PammPbknpaZ/XbGtENvHVoN5rfR
+hwBAd1NZG4tHjDgjESFbDFXZ15QnBfRNXQ6UeHtT0wKg9YLVinRlH28e83t+64q94GonYokBksvJ
++XI9ZZkAME9sD4B+Oj2HnxEjRshoSeWtetl+HHgiJIZWElcxFQJ0Q/rPh5XfmBDvM5fO5Op+dGq2
+xmkeQAFfwXtQdg==""")
 
 MH_MAGIC = 0xfeedface
 MH_CIGAM = 0xcefaedfe
