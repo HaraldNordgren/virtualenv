@@ -58,7 +58,9 @@ if [ -z "${VIRTUAL_ENV_DISABLE_PROMPT-}" ] ; then
     if [ "x__VIRTUAL_PROMPT__" != x ] ; then
         PS1="__VIRTUAL_PROMPT__$PS1"
     else
-        PS1="(`basename \"$VIRTUAL_ENV\"`) $PS1"
+        replace_script=$VIRTUAL_ENV/bin/replace_ps1.py
+        env_basename=`basename "$VIRTUAL_ENV"`
+        PS1="$(python "$replace_script" "$env_basename" "$PS1")"
     fi
     export PS1
 fi
